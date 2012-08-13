@@ -1,0 +1,38 @@
+To create an API view do the following 
+
+Unzip the API.zip to your local C:
+
+Create a sampler descriptor called API with plugin = API
+
+Add this to a Managed Entity of your choice.
+
+
+Open up a DOS prompt and type in the following:
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.createView hello
+myGroup
+Value returned: OK
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.createView.myGroup hello.addTableColumn a
+Error code returned: (#302) View 'createView' does not exist.
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.myGroup-hello.addTableColumn a
+Value returned: OK
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.myGroup-hello.addTableColumn b
+Value returned: OK
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.myGroup-hello.addTableRow x
+Value returned: OK
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.myGroup-hello.updateTableCell x.b eefefe
+Value returned: OK
+
+C:\api>Execute 192.168.10.81 1992 itrsblade1.api.myGroup-hello.addTableColumn c
+Value returned: OK
+
+
+The format is:
+
+C:\api>Execute <host_of_probe> <port> <Manages_entity_name>.api.createView hello myGroup
+
